@@ -13,7 +13,7 @@ RUN service mongod start
 RUN mkdir -p /data/db
 
 RUN mkdir /Development
-RUN cd /Development && git clone git://github.com/joyent/node
+RUN cd /Development && git clone git://github.com/nodejs/node
 
 RUN cd /Development/node && ./configure && make && make install
 RUN rm -rf /Development/node
