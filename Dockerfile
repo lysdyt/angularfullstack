@@ -21,11 +21,15 @@ RUN chmod 777 -R /Development
 
 RUN npm install -g yo bower grunt-cli generator-meanjs express generator-angular-fullstack 
 
-# RUN curl https://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh
+RUN mkdir /home/product/
+
+COPY  *  /home/product/
+
+RUN cd /home/product/ && npm install && bower install
 
 EXPOSE 80:80
 EXPOSE 443:443
-EXPOSE 3000:3000
+EXPOSE 9000:9000
 
 
 
