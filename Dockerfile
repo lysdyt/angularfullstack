@@ -26,7 +26,7 @@ RUN mkdir /home/product/
 RUN cd /home/product
 COPY package.json /home/product/
 RUN npm install
-COPY . /home/product/
+COPY * /home/product/
 RUN bower install --allow-root
 
 
