@@ -23,6 +23,7 @@ RUN npm install -g yo bower grunt-cli generator-meanjs express generator-angular
 
 RUN mkdir /home/product/
 
+WORKDIR /home/product/
 ONBUILD COPY package.json /home/product/
 ONBUILD RUN npm install
 ONBUILD COPY . /home/product/
