@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM willchen90/angular-fullstack
 MAINTAINER phillipliu
 
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
@@ -12,12 +12,6 @@ RUN service mongod start
 
 RUN mkdir -p /data/db
 
-RUN mkdir /Development
-RUN cd /Development && git clone git://github.com/nodejs/node
-
-RUN cd /Development/node && ./configure && make && make install
-RUN rm -rf /Development/node
-RUN chmod 777 -R /Development
 
 RUN npm install -g yo bower grunt-cli generator-meanjs express generator-angular-fullstack 
 
