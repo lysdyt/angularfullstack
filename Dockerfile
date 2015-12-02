@@ -1,27 +1,15 @@
 FROM willchen90/angular-fullstack
 MAINTAINER phillipliu
 
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
-RUN echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.0.list
-
-RUN apt-get update 
-
-#RUN apt-get install -y mongodb-org
-RUN apt-get install -y mongodb-org git python build-essential curl
-RUN service mongod start
-
-RUN mkdir -p /data/db
-
-
 RUN npm install -g yo bower grunt-cli generator-meanjs express generator-angular-fullstack 
 
-RUN mkdir /home/product/
+RUN mkdir /home/app/
 
-WORKDIR /home/product/
+WORKDIR /home/app/
 
-COPY package.json /home/product/
+COPY package.json /home/app/
 RUN npm install
-COPY * /home/product/
+COPY * /home/app/
 RUN bower install --allow-root
 
 
