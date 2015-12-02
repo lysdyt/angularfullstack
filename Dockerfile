@@ -1,15 +1,42 @@
-FROM willchen90/angular-fullstack
+# Set the base image to Ubuntu
+FROM    ubuntu
+
+# File Author / Maintainer
 MAINTAINER phillipliu
+
+# Update the repository
+RUN apt-get update
+
+
+
+# Install Node.js and other dependencies
+
+RUN apt-get -y install curl
+
+RUN curl -sL https://deb.nodesource.com/setup | sudo bash -
+
+RUN apt-get -y install python build-essential nodejs
+
+
+
+# Install nodemon
+
+RUN npm install -g nodemon
+
 
 RUN npm install -g yo bower grunt-cli generator-meanjs express generator-angular-fullstack 
 
+
+# Bundle app source
 RUN mkdir /home/app/
+COPY . /home/app/
+
 
 WORKDIR /home/app/
+# Install app dependencies
 
-COPY package.json /home/app/
-RUN npm install
-COPY * /home/app/
+RUN  npm install
+
 RUN bower install --allow-root
 
 
