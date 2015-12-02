@@ -15,7 +15,7 @@ RUN apt-get -y install curl
 
 RUN curl -sL https://deb.nodesource.com/setup | sudo bash -
 
-RUN apt-get -y install python build-essential nodejs
+RUN apt-get -y install git python build-essential nodejs
 
 
 
