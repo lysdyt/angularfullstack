@@ -21,7 +21,7 @@ RUN apt-get -y install git python build-essential nodejs
 
 # Install nodemon
 
-RUN npm install -g nodemon
+RUN npm install -g nodemon pm2
 
 
 RUN npm install -g yo bower grunt-cli generator-meanjs express generator-angular-fullstack 
