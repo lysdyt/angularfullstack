@@ -26,7 +26,6 @@ RUN npm install -g nodemon pm2
 
 RUN npm install -g yo bower grunt-cli generator-meanjs express generator-angular-fullstack 
 
-
 # Bundle app source
 RUN mkdir /home/app/
 COPY . /home/app/
