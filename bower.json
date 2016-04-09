@@ -1,7 +1,6 @@
 {
   "name": "altmehr",
   "version": "0.0.0",
-  "ignoredDependencies": ["angular"],
   "dependencies": {
     "angular": ">=1.2.*",
     "angular-ui-bootstrap": "~0.11.0",
